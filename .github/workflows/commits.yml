@@ -1,0 +1,16 @@
+name: commits
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]   # edited : le titre de la PR est revérifié
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Messages de commit conformes à l'AGENTS.md
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: bash scripts/check-commits.sh "$BASE_SHA" "$HEAD_SHA" "$PR_TITLE"
