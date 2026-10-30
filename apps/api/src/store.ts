@@ -18,7 +18,12 @@ export class IssueStore {
     this.nextId = maxSeedId + 1;
   }
 
-  list(projectId: string): Issue[] {
+  list(projectId: string, author?: string): Issue[] {
+    if (author) {
+      return this.issues.filter(
+        (issue) => issue.author === author,
+      );
+    }
     return this.issues.filter((issue) => issue.projectId === projectId);
   }
 
