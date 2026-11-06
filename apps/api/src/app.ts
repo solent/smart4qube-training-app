@@ -57,6 +57,7 @@ export function createApp(store: IssueStore = new IssueStore()): express.Express
     const severityValues = toArray(req.query.severity);
     const statusValues = toArray(req.query.status);
     const fileValue = typeof req.query.file === 'string' ? req.query.file : undefined;
+    const authorName = typeof req.query.author === 'string' ? req.query.author : undefined;
 
     const details: string[] = [];
     for (const v of typeValues) {
@@ -72,7 +73,7 @@ export function createApp(store: IssueStore = new IssueStore()): express.Express
       return sendError(res, 400, { code: 'INVALID_QUERY', message: 'Invalid query parameter value.', details });
     }
 
-    let results: Issue[] = store.list(projectId);
+    let results: Issue[] = store.list(projectId, authorName);
     if (fileValue !== undefined) {
       results = results.filter((issue) => issue.filePath === fileValue);
     }
