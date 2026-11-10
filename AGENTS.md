@@ -28,15 +28,6 @@ ancrées sur une ligne d'un fichier. Démarrage et opérations de l'API : `READM
 - Le `filePath` d'une issue est relatif au dépôt, en POSIX, sans `/` initial, et correspond au chemin
   du fichier de fixture.
 
-## Règle : le contrat d'abord
-
-- `contracts/openapi.yaml` est la référence du modèle d'issue et de l'API. Ordre de modification :
-  le contrat, puis l'API (`apps/api`) avec ses tests, puis le modèle et l'écran web (`apps/web`).
-- Toute modification du contrat figure dans le plan et est validée avant d'être faite.
-- Un comportement (filtre, tri, validation) est le même dans l'API et dans l'écran. Par défaut,
-  correspondance exacte : pas de recherche partielle ni insensible à la casse sans demande explicite.
-- Erreurs de l'API : toujours `{ code, message, details? }`, avec un code défini dans le contrat.
-
 ## Périmètre
 
 - Les scripts `issues:*` transmettent déjà la query string telle quelle : ne pas les modifier pour un
