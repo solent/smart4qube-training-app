@@ -62,6 +62,10 @@ paths:
             type: array
             items:
               $ref: '#/components/schemas/IssueStatus'
+        - name: author
+          in: query
+          required: false
+          schema: { type: string }
       responses:
         '200':
           description: The (possibly filtered) list of issues for the project.

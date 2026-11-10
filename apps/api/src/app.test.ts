@@ -63,6 +63,14 @@ describe('GET /issues/:projectId', () => {
   });
 });
 
+describe('GET /issues/:projectId?author=', () => {
+  it('filters issues by author', async () => {
+    const res = await request.get('/issues/acme-payments?author=marie');
+    expect(res.status).toBe(200);
+    expect(res.body.length).toBeGreaterThan(0);
+  });
+});
+
 describe('GET /issues/:projectId/:issueId', () => {
   it('returns a single issue by id', async () => {
     const res = await request.get('/issues/acme-payments/iss-003');
