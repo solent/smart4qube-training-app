@@ -50,23 +50,3 @@ ancrées sur une ligne d'un fichier. Démarrage et opérations de l'API : `READM
 ## Sécurité
 
 - Aucun secret, mot de passe, jeton ni donnée client dans le code, les tests, les fixtures ou les commits.
-
-## Commits
-
-Format Conventional Commits, avec une référence de ticket obligatoire :
-
-```text
-<type>(<portée>): <résumé à l'impératif, 72 caractères au plus>
-
-<corps facultatif : le pourquoi du changement>
-
-Refs: #<numéro du ticket>
-```
-
-- `type` : `feat`, `fix`, `test`, `refactor`, `docs`, `chore`, `ci`.
-- `portée` : `contract`, `api`, `web`, `scripts`, `skills`, `rocketnouilles`. Une tâche qui touche
-  plusieurs couches donne un commit par couche, dans l'ordre du contrat d'abord.
-- `#<numéro>` est le ticket GitHub de la tâche, pas l'identifiant d'une issue Smart4Qube (`iss-020`).
-  Numéro inconnu : le demander, ne jamais l'inventer.
-
-Exemple : `feat(api): filtrer les issues par auteur` puis, en dernière ligne, `Refs: #12`.
