@@ -3,6 +3,8 @@
 A SonarQube-like code review viewer: browse sample repositories, and read
 line-anchored vulnerabilities, quality gate violations, and comments.
 
+Ajout d'un changement bis
+
 ## Quickstart
 
 Run the API and web app in separate terminals:
