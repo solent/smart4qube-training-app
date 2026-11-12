@@ -49,7 +49,6 @@ ancrées sur une ligne d'un fichier. Démarrage et opérations de l'API : `READM
 
 ## Sécurité
 
-- Ne jamais lire, afficher ni committer un fichier `.env`. Une variable manque : demander.
 - Aucun secret, mot de passe, jeton ni donnée client dans le code, les tests, les fixtures ou les commits.
 
 ## Commits

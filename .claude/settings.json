@@ -11,5 +11,8 @@
         ]
       }
     ]
+  },
+  "permissions": {
+    "deny": ["Read(./apps/api/.env)", "Read(./apps/api/.env.*)"]
   }
 }
